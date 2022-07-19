@@ -2,24 +2,19 @@ package com.ll.exam;
 
 import java.util.Scanner;
 
-
-
 public class App {
     private Scanner sc;
 
-
     public App() {
-
         sc = new Scanner(System.in);
     }
 
     public void run() {
 
         WiseSayingController wiseSayingController = new WiseSayingController(sc);
-
         System.out.println("=== Quotes SSG ===");
         outer:
-        while(true) {
+        while (true) {
             System.out.printf("Input) ");
             String cmd = sc.nextLine().trim();
             Rq rq = new Rq(cmd);
@@ -33,6 +28,7 @@ public class App {
                     break;
                 case "list":
                     wiseSayingController.list(rq);
+                    break;
                 case "edit":
                     wiseSayingController.edit(rq);
                     break;
@@ -43,5 +39,4 @@ public class App {
 
         sc.close();
     }
-
 }
